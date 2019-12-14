@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags (required by bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Simple ToDo List</title>
+    <!-- Internal CSS to help style the page -->
+    <style type="text/css">
+      #todo_list {
+        list-style-type: none;
+      }
+      .template {
+        display: none;
+      }
+      .completed {
+        color: gray;
+        text-decoration: line-through;
+      }
+      #error_msgs {
+        color: red;
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+    <h1>Simple ToDo List</h1>
+    <div class="container border rounded">
+      <form action="engine.php?a=add" method="post">
+        <div id="error_msgs">Errors?</div>
+        <!-- Input to create new ToDo items -->
+        <label>Add Item: <input type="text" name="item" id="item_input" /></label>
+        <!-- Submit button -->
+        <input type="submit" id="submit_btn" value="Add" />
+        <ul id="todo_list">
+          <!-- This li below is a template to use to create ToDo items with in the javascript -->
+          <li id="item_tmpl" class="template"><input type="checkbox" id="item_checkbox_tmpl" value="0"/><span id="item_text">Item Text<span></li>
+        </ul>
+      </form>
+    </div>
+    </div>
+    <!-- Include the jQuery Library -->
+   <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <!-- Include the application's javascript file that runs the whole show. -->
+    <script src="todolist.js"></script>
+  </body>
+</html>
